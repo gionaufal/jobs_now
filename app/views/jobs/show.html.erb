@@ -3,4 +3,7 @@
 <p><%= @job.location %></p>
 <p><%= @job.category %></p>
 <p><%= @job.description %></p>
+<% if @job.featured %>
+  <p><strong>Destaque</strong></p>
+<% end %>
 <p><%= link_to 'Voltar', root_path %></p>

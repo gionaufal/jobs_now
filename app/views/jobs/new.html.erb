@@ -20,6 +20,10 @@
     <%= f.text_area :description %>
   </p>
   <p>
+    <strong><%= f.label :featured, 'Destaque' %></strong>
+    <%= f.check_box :featured %>
+  </p>
+  <p>
     <%= f.submit 'Criar Vaga' %>
   </p>
 <% end %>
