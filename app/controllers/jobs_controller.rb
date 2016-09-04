@@ -15,7 +15,8 @@ class JobsController < ApplicationController
     if @job.save
       redirect_to @job
     else
-      flash[:error]= 'Não foi possível atualizar a vaga'
+      flash[:error]= 'Não foi possível criar a vaga'
+      render :new
     end
   end
 
