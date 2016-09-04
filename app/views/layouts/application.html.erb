@@ -11,6 +11,9 @@
   <body>
     <h1>Emprego Já</h1>
     <hr>
+    <% if flash[:error] %>
+      <div class="error"><%= flash[:error] %></div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
