@@ -9,7 +9,7 @@
   </p>
   <p>
     <%= f.label :company_id, 'Empresa' %>
-    <%= f.collection_select(:company_id, @companies, :id, :name) %>
+    <%= f.collection_select :company_id, @companies, :id, :name, class: "form-control" %>
   </p>
   <p>
     <%= f.label :category, 'Categoria' %>
@@ -24,6 +24,6 @@
     <%= f.check_box :featured %>
   </p>
   <p>
-    <%= f.submit submit_btn %>
+    <%= f.submit submit_btn, class: 'btn btn-success'%>
   </p>
 <% end %>

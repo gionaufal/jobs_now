@@ -1,7 +1,7 @@
-
 class JobsController < ApplicationController
+  before_action :find_job, only: [:show, :edit, :update]
   def show
-    @job = Job.find(params[:id])
+
   end
 
   def new
@@ -21,12 +21,10 @@ class JobsController < ApplicationController
   end
 
   def edit
-    @job = Job.find(params[:id])
     @companies = Company.all
   end
 
   def update
-    @job = Job.find(params[:id])
     @companies = Company.all
     if @job.update(job_params)
       redirect_to @job
@@ -40,6 +38,10 @@ class JobsController < ApplicationController
 
   def job_params
     params.require(:job).permit(:title, :company_id, :location, :category, :description, :featured)
+  end
+
+  def find_job
+    @job = Job.find(params[:id])
   end
 
 end

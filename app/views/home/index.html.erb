@@ -1,18 +1,23 @@
-<div class="job">
-  <% @jobs.each do |job| %>
-  <h1><%= link_to job.title, job %></h1>
-  <p><%= job.company.name %></p>
-  <p><%= job.location %></p>
-  <% if job.featured? %>
-  <p><strong>Destaque</strong></p>
-  <% end %>
-  <% end %>
-</div>
-
-<section class="companies">
-  <ul>
-    <% @companies.each do |company| %>
-    <li><%= link_to company.name, company %></li>
+<div class="row">
+  <section class="jobs col-md-10">
+    <% @jobs.each do |job| %>
+    <div class="job col-md-6 col-xs-12">
+      <h1><%= link_to job.title, job %></h1>
+      <p><%= job.company.name %></p>
+      <p><%= job.location %></p>
+      <% if job.featured? %>
+      <p><strong>Destaque</strong></p>
+      <% end %>
+    </div>
     <% end %>
-  </ul>
-</section>
+  </section>
+
+  <section class="companies col-md-2">
+    <h3>Empresas</h3>
+    <ul>
+      <% @companies.each do |company| %>
+      <li><%= link_to company.name, company %></li>
+      <% end %>
+    </ul>
+  </section>
+</div>
