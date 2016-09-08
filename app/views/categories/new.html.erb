@@ -1,0 +1,9 @@
+<% if flash[:error] %>
+  <div class="error">Preencha o nome da categoria</div>
+<% end %>
+
+<%= form_for @category do |f| %>
+  <%= f.label :name, 'Nome' %>
+  <%= f.text_field :name %>
+  <%= f.submit 'Criar Categoria' %>
+<% end %>

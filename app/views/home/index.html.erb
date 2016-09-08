@@ -21,8 +21,8 @@
     </ul>
     <h3>Categorias</h3>
     <ul>
-      <%= @categories.each do |category| %>
-      <li><%= link_to category.name, category %></li>
+      <% @categories.each do |category| %>
+        <li><%= link_to category.name, category %></li>
       <% end %>
     </ul>
   </section>
