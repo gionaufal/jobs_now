@@ -1,4 +1,9 @@
-<h1><%= @company.name %></h1>
+<h1>
+  <%= @company.name %>
+  <% if @company.premium? %>
+    <%= image_tag 'estrela.png' %>    
+  <% end %>
+</h1>
 <p><%= @company.location %></p>
 <p><%= @company.mail %></p>
 <p><%= @company.phone %></p>
