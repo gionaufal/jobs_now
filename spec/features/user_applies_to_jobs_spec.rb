@@ -34,4 +34,17 @@ feature 'User applies to job' do
     expect(page).to have_content user.phone
 
   end
+
+  scenario 'and should fill all fields' do
+    job = create(:job)
+
+    visit job_path(job)
+
+    click_on 'Candidate-se'
+
+    click_on 'Aplicar à Vaga'
+
+    expect(page).to have_content 'Por favor, preencha todos os campos!'
+
+  end
 end

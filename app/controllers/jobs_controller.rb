@@ -1,7 +1,6 @@
 class JobsController < ApplicationController
   before_action :find_job, only: [:show, :edit, :update]
   def show
-    @user = @job.users.new
 
   end
 

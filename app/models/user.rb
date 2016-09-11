@@ -1,4 +1,4 @@
 class User < ApplicationRecord
-  has_many :jobs
+  belongs_to :job
   validates :name, :description, :github, :linkedin, :email, :phone, presence: true
 end
