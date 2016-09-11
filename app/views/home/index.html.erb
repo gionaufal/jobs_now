@@ -9,6 +9,9 @@
           <% if job.featured? %>
           <p><strong>Destaque</strong></p>
           <% end %>
+          <% if job.recent? %>
+            <p>Novidade!</p>
+          <% end %>
         </div>
       <% end %>
     <% end %>
