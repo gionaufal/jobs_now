@@ -5,6 +5,6 @@ class Job < ApplicationRecord
   validates :title, :location, :description, :category_id,  presence: true
 
   def expired?
-    Time.now.to_date - created_at.to_date > 88
+    Time.now.to_date - created_at.to_date > 89
   end
 end
