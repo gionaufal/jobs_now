@@ -11,6 +11,38 @@
   <p><strong>Destaque</strong></p>
 <% end %>
 
-<%= link_to "Candidate-se", new_user_path %>
+<button class="btn btn-success">Candidate-se</button>
 
 <p><%= link_to 'Voltar', root_path %></p>
+
+<section class="apply">
+  <%= form_for @user do |f|%>
+    <div class='field'>
+      <%= f.label :name, 'Nome Completo' %>
+      <% f.text_field :name %>
+    </div>
+    <div class='field'>
+      <%= f.label :description, 'Resumo de competências/habilidades' %>
+      <% f.text_field :description %>
+    </div>
+    <div class='field'>
+      <%= f.label :github, 'Github' %>
+      <% f.text_field :github %>
+    </div>
+    <div class='field'>
+      <%= f.label :linkedin, 'LinkedIn' %>
+      <% f.text_field :linkedin %>
+    </div>
+    <div class='field'>
+      <%= f.label :email, 'Email' %>
+      <% f.text_field :email %>
+    </div>
+    <div class='field'>
+      <%= f.label :phone, 'Telefone' %>
+      <% f.text_field :phone %>
+    </div>
+    <div class='submit'>
+      <%= f.submit 'Aplicar à Vaga' %>
+    </div>
+  <% end %>
+</section>
