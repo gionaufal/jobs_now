@@ -1,6 +1,7 @@
 class Job < ApplicationRecord
   belongs_to :company
   belongs_to :category
+  has_many :users
   validates :title, :location, :description, :category_id,  presence: true
 
   def expired?

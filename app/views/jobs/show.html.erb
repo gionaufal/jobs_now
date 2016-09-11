@@ -11,4 +11,55 @@
   <p><strong>Destaque</strong></p>
 <% end %>
 
+<% if flash[:notice] %>
+  <div class="alert"><%= flash[:notice] %></div>
+<% end %>
+
+<button class="btn btn-info" id='apply'>Candidate-se</button>
+
 <p><%= link_to 'Voltar', root_path %></p>
+
+<section class="users">
+  <p><%= @job.users.count %> candidatos(s) cadastrado(s)</p>
+  <% @job.users.each do |user| %>
+    <p><%= user.name %></p>
+    <p><%= user.description %></p>
+    <p><%= user.github %></p>
+    <p><%= user.linkedin %></p>
+    <p><%= user.email %></p>
+    <p><%= user.phone %></p>
+  <% end %>
+</section>
+
+
+<section class="apply">
+  <%= form_for [@job, @job.users.new] do |f|%>
+    <div class='field'>
+      <%= f.label :name, 'Nome Completo' %>
+      <%= f.text_field :name %>
+    </div>
+    <div class='field'>
+      <%= f.label :description, 'Resumo de competências/habilidades' %>
+      <%= f.text_area :description %>
+    </div>
+    <div class='field'>
+      <%= f.label :github, 'Github' %>
+      <%= f.text_field :github %>
+    </div>
+    <div class='field'>
+      <%= f.label :linkedin, 'LinkedIn' %>
+      <%= f.text_field :linkedin %>
+    </div>
+    <div class='field'>
+      <%= f.label :email, 'Email' %>
+      <%= f.text_field :email %>
+    </div>
+    <div class='field'>
+      <%= f.label :phone, 'Telefone' %>
+      <%= f.text_field :phone %>
+    </div>
+    <div class='submit'>
+      <%= f.submit 'Aplicar à Vaga', class:'btn btn-success'  %>
+    </div>
+  <% end %>
+</section>
