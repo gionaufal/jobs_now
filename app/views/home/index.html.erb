@@ -1,13 +1,13 @@
 <div class="row">
-  <section class="jobs col-md-10">
+  <div class="jobs col-sm-10">
     <% @jobs.each do |job| %>
       <% if !job.expired? %>
-        <div class="job col-md-6 col-xs-12">
+        <div class="job col-xs-12 text-center">
           <h1><%= link_to job.title, job %></h1>
           <p><%= job.company.name %></p>
           <p><%= job.location %></p>
           <% if job.featured? %>
-          <p><strong>Destaque</strong></p>
+            <p><strong>Destaque</strong></p>
           <% end %>
           <% if job.recent? %>
             <p>Novidade!</p>
@@ -15,9 +15,9 @@
         </div>
       <% end %>
     <% end %>
-  </section>
+  </div>
 
-  <section class="companies col-md-2">
+  <div class="companies col-sm-2">
     <h3>Empresas</h3>
     <ul>
       <% @companies.each do |company| %>
@@ -30,5 +30,5 @@
         <li><%= link_to category.name, category %></li>
       <% end %>
     </ul>
-  </section>
+  </div>
 </div>
