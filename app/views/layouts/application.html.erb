@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JobsNow</title>
+    <title>Jobs Now</title>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -35,8 +35,21 @@
           <li><%= link_to 'Nova categoria', new_category_path %></li>
           <li><%= link_to 'Nova empresa', new_company_path  %></li>
           <li><%= link_to 'Nova vaga', new_job_path %></li>
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Cadastrar</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <% if current_user %>
+            <li>Logado como <%= current_user.name %></li>
+            <li><%= link_to "Logout", '/logout' %></li>
+          <% else %>
+            <li>
+              <%= link_to '/login' do %>
+                <span class="glyphicon glyphicon-log-in"></span> Login</a>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to signup_path do%>
+                <span class="glyphicon glyphicon-user"></span> Cadastrar
+              <%end %>
+            </li>
+          <% end %>
         </ul>
         </div>
 
@@ -45,7 +58,10 @@
 
     <div class="container-fluid">
       <% if flash[:error] %>
-      <div class="error"><%= flash[:error] %></div>
+        <div class="error"><%= flash[:error] %></div>
+      <% end %>
+      <% if flash[:notice] %>
+        <div class="notice"><%= flash[:notice] %></div>
       <% end %>
       <%= yield %>
     </div>
