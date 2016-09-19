@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  before_filter :authorize, only: [:new, :create]
+
   def show
     @category = Category.find(params[:id])
     @jobs = @category.jobs.all

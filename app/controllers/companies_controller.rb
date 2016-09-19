@@ -1,4 +1,6 @@
 class CompaniesController < ApplicationController
+  before_action :authorize, only: [:new, :create, :edit, :update]
+
   def show
     find_company
     @jobs = @company.jobs.all
