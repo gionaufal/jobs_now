@@ -2,6 +2,16 @@ require 'rails_helper'
 
 feature 'User creates category' do
   scenario 'successfully' do
+    visit root_path
+
+    click_on 'Cadastrar'
+
+    fill_in 'E-mail',                      with: 'gio@gio.com'
+    fill_in 'Senha',                       with: 'senha123'
+    fill_in 'Confirme sua senha',          with: 'senha123'
+
+    click_on 'Criar usuário'
+
     category = Category.new(name: 'Desenvolvedor')
 
     visit new_category_path
@@ -14,6 +24,16 @@ feature 'User creates category' do
   end
 
   scenario 'should fill the field' do
+    visit root_path
+
+    click_on 'Cadastrar'
+
+    fill_in 'E-mail',                      with: 'gio@gio.com'
+    fill_in 'Senha',                       with: 'senha123'
+    fill_in 'Confirme sua senha',          with: 'senha123'
+
+    click_on 'Criar usuário'
+    
     visit new_category_path
     click_on 'Criar Categoria'
 

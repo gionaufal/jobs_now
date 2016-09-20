@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   before_action :find_job, only: [:show, :edit, :update]
-  before_filter :authorize, only: [:new, :create, :edit, :update]
+  before_action :authorize, only: [:new, :create, :edit, :update]
 
   def show
 

@@ -2,6 +2,16 @@ require 'rails_helper'
 
 feature 'User edit jobs' do
   scenario 'successfully' do
+    visit root_path
+
+    click_on 'Cadastrar'
+
+    fill_in 'E-mail',                      with: 'gio@gio.com'
+    fill_in 'Senha',                       with: 'senha123'
+    fill_in 'Confirme sua senha',          with: 'senha123'
+
+    click_on 'Criar usuário'
+
     company = Company.create(name: 'Campus Code',
                              location: 'São Paulo',
                              mail: 'contato@campus.com.br',
@@ -31,6 +41,16 @@ feature 'User edit jobs' do
   end
 
   scenario 'and change company' do
+    visit root_path
+
+    click_on 'Cadastrar'
+
+    fill_in 'E-mail',                      with: 'gio@gio.com'
+    fill_in 'Senha',                       with: 'senha123'
+    fill_in 'Confirme sua senha',          with: 'senha123'
+
+    click_on 'Criar usuário'
+
     company = Company.create(name: 'Campus Code',
                              location: 'São Paulo',
                              mail: 'contato@campus.com.br',
@@ -60,6 +80,16 @@ feature 'User edit jobs' do
   end
 
   scenario 'with valid data' do
+    visit root_path
+
+    click_on 'Cadastrar'
+
+    fill_in 'E-mail',                      with: 'gio@gio.com'
+    fill_in 'Senha',                       with: 'senha123'
+    fill_in 'Confirme sua senha',          with: 'senha123'
+
+    click_on 'Criar usuário'
+    
     company = Company.create(name: 'Campus Code',
                              location: 'São Paulo',
                              mail: 'contato@campus.com.br',
