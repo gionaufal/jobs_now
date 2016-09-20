@@ -36,7 +36,7 @@
           <li><%= link_to 'Nova empresa', new_company_path  %></li>
           <li><%= link_to 'Nova vaga', new_job_path %></li>
           <% if current_user %>
-            <li>Logado como <%= current_user.name %></li>
+            <li>Logado como <%= current_user.email %></li>
             <li><%= link_to "Logout", '/logout' %></li>
           <% else %>
             <li>
