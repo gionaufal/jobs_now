@@ -10,7 +10,7 @@ class AdminsController < ApplicationController
       redirect_to '/'
     else
       flash[:error] = 'Não foi possível criar o usuário'
-      redirect_to '/signup'
+      render :new
     end
   end
 
